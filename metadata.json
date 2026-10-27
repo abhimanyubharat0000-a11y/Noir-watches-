@@ -1,0 +1,6 @@
+{
+  "name": "NOIR TIME | Panther Edition",
+  "description": "A cinematic luxury watch experience with scroll-driven assembly animation, Rolex-inspired precision, and black-and-purple aesthetics.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

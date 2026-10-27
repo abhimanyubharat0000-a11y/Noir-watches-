@@ -1,0 +1,1032 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#08060e">
+  <title>NOIR TIME | Panther Edition</title>
+  <meta name="description" content="A cinematic luxury watch experience with scroll-driven assembly animation, Rolex-inspired precision, and black-and-purple aesthetics.">
+  <meta property="og:title" content="NOIR TIME | Panther Edition">
+  <meta property="og:description" content="A cinematic luxury watch experience with scroll-driven assembly animation, Rolex-inspired precision, and black-and-purple aesthetics.">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #08060e;
+      --panel: rgba(24, 15, 39, .66);
+      --purple: #a855f7;
+      --violet: #6d28d9;
+      --light: #eee7ff;
+      --muted: #a59bb8;
+      --border: rgba(192, 132, 252, .22);
+    }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    html {
+      scroll-behavior: smooth;
+      background: var(--bg);
+    }
+    body {
+      background:
+        radial-gradient(ellipse at 50% 0%, #24103d 0%, transparent 42%),
+        var(--bg);
+      color: var(--light);
+      font-family: 'Manrope', sans-serif;
+      overflow-x: hidden;
+    }
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 2;
+      opacity: .13;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.15'/%3E%3C/svg%3E");
+    }
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+    button {
+      font: inherit;
+    }
+    .navbar {
+      position: fixed;
+      z-index: 50;
+      top: 14px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: min(94%, 1180px);
+      min-height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 22px;
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      background: rgba(12, 8, 20, .72);
+      backdrop-filter: blur(22px);
+      -webkit-backdrop-filter: blur(22px);
+      box-shadow: 0 8px 40px #0005;
+      transition: .35s;
+    }
+    .logo {
+      font-family: 'Cinzel', serif;
+      font-size: 19px;
+      letter-spacing: 3px;
+      white-space: nowrap;
+    }
+    .logo span {
+      color: #c084fc;
+    }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 26px;
+      font-size: 11px;
+      letter-spacing: 1.5px;
+      color: #d8cce8;
+    }
+    .nav-links a {
+      transition: color .3s;
+    }
+    .nav-links a:hover {
+      color: #d8a8ff;
+    }
+    .nav-cta {
+      border: 1px solid #a855f7;
+      padding: 10px 15px;
+      border-radius: 30px;
+      font-size: 10px;
+      letter-spacing: 1px;
+      white-space: nowrap;
+      transition: .3s;
+    }
+    .nav-cta:hover {
+      background: #7e22ce;
+      box-shadow: 0 0 25px #a855f766;
+    }
+    .eyebrow {
+      font-size: 10px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: #c084fc;
+    }
+    .hero {
+      position: relative;
+      height: 440vh;
+      min-height: 2200px;
+    }
+    .hero-sticky {
+      position: sticky;
+      top: 0;
+      height: 100svh;
+      min-height: 620px;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background:
+        radial-gradient(ellipse at center, #30124b 0%, #130b20 40%, #08060e 75%);
+    }
+    .hero-sticky::before,
+    .hero-sticky::after {
+      content: "";
+      position: absolute;
+      width: 65vw;
+      height: 65vw;
+      border: 1px solid #b56aff18;
+      border-radius: 50%;
+      pointer-events: none;
+    }
+    .hero-sticky::after {
+      width: 85vw;
+      height: 85vw;
+      border-color: #b56aff0d;
+    }
+    .orbit {
+      position: absolute;
+      width: min(72vw, 680px);
+      aspect-ratio: 1;
+      border: 1px solid #c084fc1a;
+      border-radius: 50%;
+      animation: orbit 32s linear infinite;
+    }
+    .orbit::before,
+    .orbit::after {
+      content: "";
+      position: absolute;
+      inset: 9%;
+      border: 1px dashed #c084fc20;
+      border-radius: 50%;
+    }
+    .orbit::after {
+      inset: 20%;
+      border-style: solid;
+      border-color: #c084fc14;
+    }
+    @keyframes orbit {
+      to { transform: rotate(360deg); }
+    }
+    .hero-copy {
+      position: absolute;
+      z-index: 5;
+      top: 17%;
+      left: 0;
+      right: 0;
+      text-align: center;
+      padding: 0 18px;
+      pointer-events: none;
+    }
+    .hero-copy h1 {
+      margin-top: 17px;
+      font-family: 'Cinzel', serif;
+      font-weight: 500;
+      font-size: clamp(30px, 5.4vw, 72px);
+      letter-spacing: .08em;
+      line-height: 1.12;
+      text-shadow: 0 0 40px #b56aff22;
+    }
+    .hero-copy p {
+      margin-top: 13px;
+      color: #c4b6d8;
+      font-size: 12px;
+      letter-spacing: 2px;
+    }
+    .watch-stage {
+      position: absolute;
+      width: min(78vw, 640px);
+      height: min(65vh, 610px);
+      top: 48%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      perspective: 1000px;
+      z-index: 3;
+    }
+    .watch-frame {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      filter: drop-shadow(0 25px 55px #000b);
+      transition: opacity .12s linear;
+      will-change: opacity;
+    }
+    #watchFrameA { opacity: 1; }
+    #watchFrameB { opacity: 0; }
+    .watch-glow {
+      position: absolute;
+      inset: 12%;
+      background: #a855f7;
+      filter: blur(100px);
+      opacity: .15;
+      border-radius: 50%;
+      pointer-events: none;
+    }
+    .reflection {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background: linear-gradient(
+        115deg,
+        transparent 25%,
+        #ffffff09 43%,
+        #d8b4fe20 48%,
+        transparent 56%
+      );
+      background-size: 220% 100%;
+      animation: reflection 7s ease-in-out infinite;
+      mix-blend-mode: screen;
+    }
+    @keyframes reflection {
+      0%, 100% { background-position: 150% 0; }
+      50% { background-position: -100% 0; }
+    }
+    .hero-bottom {
+      position: absolute;
+      z-index: 6;
+      bottom: 30px;
+      left: 0;
+      right: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+      color: #c4b6d8;
+      font-size: 9px;
+      letter-spacing: 3px;
+    }
+    .scroll-line {
+      width: 1px;
+      height: 45px;
+      background: linear-gradient(#c084fc, transparent);
+      animation: scrollLine 1.7s ease-in-out infinite;
+    }
+    @keyframes scrollLine {
+      0%, 100% { transform: scaleY(.5); opacity: .4; }
+      50% { transform: scaleY(1); opacity: 1; }
+    }
+    .frame-count {
+      position: absolute;
+      right: 25px;
+      bottom: 38px;
+      z-index: 7;
+      font-size: 10px;
+      color: #c4b6d8;
+      letter-spacing: 2px;
+    }
+    .frame-count strong {
+      color: #e9d5ff;
+    }
+    .section {
+      position: relative;
+      padding: 120px 6%;
+    }
+    .section-heading {
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto 55px;
+    }
+    .section-heading h2 {
+      font-family: 'Cinzel', serif;
+      font-size: clamp(28px, 4vw, 48px);
+      font-weight: 500;
+      margin-top: 16px;
+      letter-spacing: 2px;
+    }
+    .section-heading p {
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.9;
+      margin-top: 17px;
+    }
+    .collection {
+      background: linear-gradient(180deg, #08060e, #10091a 45%, #08060e);
+    }
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 24px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .watch-card {
+      position: relative;
+      min-width: 0;
+      overflow: hidden;
+      border: 1px solid #c084fc24;
+      border-radius: 34px 34px 34px 8px;
+      background:
+        linear-gradient(145deg, #ffffff0a, transparent 55%),
+        rgba(28, 15, 43, .64);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      transition: transform .5s, border-color .5s, box-shadow .5s;
+      transform-style: preserve-3d;
+      cursor: pointer;
+    }
+    .watch-card::before {
+      content: "";
+      position: absolute;
+      z-index: 2;
+      inset: 0;
+      pointer-events: none;
+      background: linear-gradient(
+        120deg,
+        transparent 25%,
+        #ffffff0b 42%,
+        #c084fc20 48%,
+        transparent 58%
+      );
+      transform: translateX(-110%);
+      transition: transform .8s;
+    }
+    .watch-card:hover::before {
+      transform: translateX(110%);
+    }
+    .watch-card:hover,
+    .watch-card:focus-visible {
+      transform: translateY(-12px) rotateX(2deg);
+      border-color: #c084fc80;
+      box-shadow: 0 30px 70px #6d28d933, 0 0 30px #a855f718;
+      outline: none;
+    }
+    .card-image {
+      position: relative;
+      height: 310px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 25px;
+      overflow: hidden;
+      background: radial-gradient(ellipse, #55218142, transparent 68%);
+    }
+    .card-image::after {
+      content: "";
+      position: absolute;
+      inset: auto 15% 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, #c084fc80, transparent);
+    }
+    .card-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      filter: drop-shadow(0 15px 20px #0008);
+      transition: transform .6s;
+    }
+    .watch-card:hover .card-image img {
+      transform: scale(1.08) rotate(-2deg);
+    }
+    .card-content {
+      padding: 25px;
+    }
+    .card-number {
+      color: #c084fc;
+      font-size: 9px;
+      letter-spacing: 3px;
+    }
+    .card-content h3 {
+      font-family: 'Cinzel', serif;
+      font-size: 20px;
+      font-weight: 500;
+      margin: 12px 0;
+    }
+    .card-content p {
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.9;
+    }
+    .card-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 20px;
+      padding: 10px 0;
+      border-bottom: 1px solid #c084fc66;
+      color: #e9d5ff;
+      font-size: 10px;
+      letter-spacing: 2px;
+    }
+    .card-detail {
+      display: none;
+      padding-top: 16px;
+      color: #e9d5ff;
+      font-size: 11px;
+      line-height: 1.8;
+    }
+    .watch-card.active .card-detail {
+      display: block;
+      animation: fadeUp .4s ease both;
+    }
+    .showcase {
+      overflow: hidden;
+      background:
+        radial-gradient(ellipse at 50% 50%, #2c1245 0%, #100919 40%, #08060e 75%);
+    }
+    .showcase-inner {
+      max-width: 1050px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: 65px;
+    }
+    .showcase-art {
+      position: relative;
+      min-height: 420px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid #c084fc24;
+      border-radius: 50% 50% 42% 42%;
+      background: radial-gradient(ellipse, #a855f724, transparent 65%);
+    }
+    .showcase-art::before {
+      content: "";
+      position: absolute;
+      inset: 8%;
+      border: 1px solid #c084fc22;
+      border-radius: 50%;
+      animation: orbit 24s linear infinite;
+    }
+    .showcase-art img {
+      width: 85%;
+      height: 360px;
+      object-fit: contain;
+      filter: drop-shadow(0 25px 35px #000b);
+      animation: floatWatch 5s ease-in-out infinite;
+    }
+    @keyframes floatWatch {
+      0%, 100% { transform: translateY(0) rotate(-2deg); }
+      50% { transform: translateY(-12px) rotate(2deg); }
+    }
+    .showcase-copy h2 {
+      font-family: 'Cinzel', serif;
+      font-weight: 500;
+      font-size: clamp(28px, 3.5vw, 44px);
+      line-height: 1.35;
+      margin: 18px 0;
+    }
+    .showcase-copy p {
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 2;
+    }
+    .pill {
+      display: inline-block;
+      margin-top: 25px;
+      padding: 13px 20px;
+      border: 1px solid #c084fc66;
+      border-radius: 30px;
+      color: #e9d5ff;
+      font-size: 10px;
+      letter-spacing: 2px;
+      transition: .3s;
+    }
+    .pill:hover {
+      background: #7e22ce55;
+      box-shadow: 0 0 30px #a855f733;
+    }
+    .specs {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      max-width: 950px;
+      margin: 65px auto 0;
+      border-top: 1px solid #c084fc2a;
+      border-bottom: 1px solid #c084fc2a;
+    }
+    .spec {
+      text-align: center;
+      padding: 27px 12px;
+      border-right: 1px solid #c084fc2a;
+    }
+    .spec:last-child { border-right: 0; }
+    .spec strong {
+      display: block;
+      font-family: 'Cinzel', serif;
+      font-size: 22px;
+      font-weight: 500;
+    }
+    .spec span {
+      display: block;
+      margin-top: 8px;
+      font-size: 9px;
+      color: var(--muted);
+      letter-spacing: 2px;
+    }
+    .ticker {
+      overflow: hidden;
+      border-top: 1px solid #c084fc1f;
+      border-bottom: 1px solid #c084fc1f;
+      background: #100919;
+      padding: 22px 0;
+    }
+    .ticker-track {
+      display: flex;
+      width: max-content;
+      animation: ticker 32s linear infinite;
+    }
+    .ticker-track span {
+      padding: 0 35px;
+      font-family: 'Cinzel', serif;
+      font-size: 14px;
+      letter-spacing: 4px;
+      color: #d8b4fe;
+      white-space: nowrap;
+    }
+    @keyframes ticker {
+      to { transform: translateX(-50%); }
+    }
+    .footer {
+      padding: 70px 6% 30px;
+      text-align: center;
+      background: #07050b;
+    }
+    .footer .logo {
+      display: inline-block;
+    }
+    .footer p {
+      max-width: 500px;
+      margin: 20px auto;
+      font-size: 12px;
+      line-height: 1.9;
+      color: var(--muted);
+    }
+    .footer small {
+      display: block;
+      border-top: 1px solid #c084fc20;
+      padding-top: 25px;
+      color: #766b85;
+      font-size: 10px;
+    }
+    .reveal {
+      opacity: 0;
+      transform: translateY(35px);
+      transition: opacity .8s ease, transform .8s ease;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .ripple {
+      position: fixed;
+      z-index: 100;
+      width: 25px;
+      height: 25px;
+      border: 1px solid #d8b4fe;
+      border-radius: 50%;
+      pointer-events: none;
+      transform: translate(-50%, -50%);
+      animation: ripple .75s ease-out forwards;
+      box-shadow: 0 0 20px #a855f755;
+    }
+    @keyframes ripple {
+      from { opacity: .9; width: 15px; height: 15px; }
+      to { opacity: 0; width: 160px; height: 160px; }
+    }
+    .touch-glow {
+      position: fixed;
+      z-index: 1;
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      pointer-events: none;
+      background: #9333ea;
+      filter: blur(100px);
+      opacity: .14;
+      transform: translate(-50%, -50%);
+    }
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(12px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @media (max-width: 760px) {
+      .navbar {
+        top: 8px;
+        width: 96%;
+        min-height: 56px;
+        padding: 10px 13px;
+        border-radius: 17px;
+      }
+      .logo { font-size: 15px; letter-spacing: 2px; }
+      .nav-links { display: none; }
+      .nav-cta { padding: 9px 11px; font-size: 9px; }
+      .hero {
+        height: 330vh;
+        min-height: 1900px;
+      }
+      .hero-sticky { min-height: 540px; }
+      .hero-copy { top: 19%; }
+      .hero-copy h1 {
+        font-size: clamp(28px, 8vw, 44px);
+        letter-spacing: 2px;
+      }
+      .hero-copy p {
+        font-size: 10px;
+        letter-spacing: 1px;
+      }
+      .watch-stage {
+        top: 49%;
+        width: 95vw;
+        height: 48vh;
+      }
+      .orbit { width: 95vw; }
+      .hero-bottom { bottom: 24px; }
+      .frame-count {
+        right: 12px;
+        bottom: 90px;
+        font-size: 9px;
+      }
+      .section { padding: 85px 5%; }
+      .section-heading { margin-bottom: 35px; }
+      .cards { grid-template-columns: 1fr; gap: 22px; }
+      .card-image { height: 300px; }
+      .showcase-inner {
+        grid-template-columns: 1fr;
+        gap: 35px;
+      }
+      .showcase-art { min-height: 330px; }
+      .showcase-art img { height: 290px; }
+      .specs { margin-top: 40px; }
+      .spec { padding: 20px 5px; }
+      .spec strong { font-size: 17px; }
+      .spec span { font-size: 8px; letter-spacing: 1px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .01ms !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="touch-glow" id="touchGlow"></div>
+
+  <header>
+    <nav class="navbar" id="navbar" aria-label="Main Navigation">
+      <a href="#home" class="logo">NOIR <span>TIME</span></a>
+      <div class="nav-links">
+        <a href="#home">EXPERIENCE</a>
+        <a href="#collection">COLLECTION</a>
+        <a href="#craft">CRAFTSMANSHIP</a>
+      </div>
+      <a class="nav-cta" href="#collection">EXPLORE WATCHES ↗</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="home" aria-label="Watch Assembly Experience">
+      <div class="hero-sticky" id="heroSticky">
+        <div class="orbit"></div>
+        <div class="hero-copy">
+          <div class="eyebrow">PRECISION MEETS POWER</div>
+          <h1>ENGINEERED TO RULE.</h1>
+          <p>THE PANTHER EDITION · AN EXPRESSION OF TIME</p>
+        </div>
+        <div class="watch-stage">
+          <div class="watch-glow"></div>
+          <img id="watchFrameA" class="watch-frame" src="frames/frame_001.jpg" alt="Luxury watch assembly frame 1">
+          <img id="watchFrameB" class="watch-frame" src="frames/frame_001.jpg" alt="Luxury watch assembly frame 2">
+          <div class="reflection"></div>
+        </div>
+        <div class="hero-bottom">
+          <span>SCROLL TO WITNESS THE ASSEMBLY</span>
+          <div class="scroll-line"></div>
+        </div>
+        <div class="frame-count">
+          FRAME <strong id="frameNumber">001</strong> / 050
+        </div>
+      </div>
+    </section>
+
+    <div class="ticker" aria-hidden="true">
+      <div class="ticker-track">
+        <span>TIME IS AN ART</span>
+        <span>✦</span>
+        <span>BUILT WITH PRECISION</span>
+        <span>✦</span>
+        <span>POWER IN EVERY SECOND</span>
+        <span>✦</span>
+        <span>TIME IS AN ART</span>
+        <span>✦</span>
+        <span>BUILT WITH PRECISION</span>
+        <span>✦</span>
+        <span>POWER IN EVERY SECOND</span>
+        <span>✦</span>
+      </div>
+    </div>
+
+    <section class="section collection" id="collection" aria-label="Watch Collection">
+      <div class="section-heading reveal">
+        <div class="eyebrow">THE COLLECTION</div>
+        <h2>Made to Stand Apart.</h2>
+        <p>
+          Every detail has a purpose. Explore a visual study in mechanical
+          precision, dark elegance, and unapologetic character.
+        </p>
+      </div>
+      <div class="cards">
+        <article class="watch-card reveal" tabindex="0" role="region" aria-label="Shadow Black watch detail">
+          <div class="card-image">
+            <img src="frames/frame_012.jpg"
+                 alt="Shadow Black watch movement assembly"
+                 loading="lazy">
+          </div>
+          <div class="card-content">
+            <div class="card-number">01 / THE ORIGIN</div>
+            <h3>Shadow Black</h3>
+            <p>A dark silhouette with a commanding presence and an understated finish.</p>
+            <div class="card-detail">
+              Designed around contrast, depth, and the beauty of mechanical detail.
+            </div>
+            <a href="#craft" class="card-link">DISCOVER THE CRAFT ↗</a>
+          </div>
+        </article>
+
+        <article class="watch-card reveal" tabindex="0" role="region" aria-label="Violet Precision watch detail">
+          <div class="card-image">
+            <img src="frames/frame_025.jpg"
+                 alt="Violet Precision internal gear train assembly"
+                 loading="lazy">
+          </div>
+          <div class="card-content">
+            <div class="card-number">02 / THE MACHINE</div>
+            <h3>Violet Precision</h3>
+            <p>Inspired by the intricate architecture of a finely engineered timepiece.</p>
+            <div class="card-detail">
+              A visual celebration of movement, material, and precision engineering.
+            </div>
+            <a href="#craft" class="card-link">DISCOVER THE CRAFT ↗</a>
+          </div>
+        </article>
+
+        <article class="watch-card reveal" tabindex="0" role="region" aria-label="Midnight Royal watch detail">
+          <div class="card-image">
+            <img src="frames/frame_045.jpg"
+                 alt="Midnight Royal bezel and dial assembly"
+                 loading="lazy">
+          </div>
+          <div class="card-content">
+            <div class="card-number">03 / THE FINISH</div>
+            <h3>Midnight Royal</h3>
+            <p>A bold finishing statement framed by deep shadows and violet light.</p>
+            <div class="card-detail">
+              The completed design brings every component together in one dramatic form.
+            </div>
+            <a href="#craft" class="card-link">DISCOVER THE CRAFT ↗</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section showcase" id="craft" aria-label="Craftsmanship Showcase">
+      <div class="showcase-inner">
+        <div class="showcase-art reveal">
+          <img src="frames/frame_050.jpg"
+               alt="Completed luxury watch in full profile"
+               loading="lazy">
+        </div>
+        <div class="showcase-copy reveal">
+          <div class="eyebrow">BEHIND EVERY SECOND</div>
+          <h2>Precision Is Never an Accident.</h2>
+          <p>
+            A timepiece is more than a dial and a moving hand. It is the result
+            of countless details working together, where every component has
+            a role and every second has a purpose.
+          </p>
+          <a href="#home" class="pill">REPLAY THE ASSEMBLY ↑</a>
+        </div>
+      </div>
+      <div class="specs reveal">
+        <div class="spec">
+          <strong>50</strong>
+          <span>ASSEMBLY FRAMES</span>
+        </div>
+        <div class="spec">
+          <strong>01</strong>
+          <span>CONTINUOUS EXPERIENCE</span>
+        </div>
+        <div class="spec">
+          <strong>∞</strong>
+          <span>ATTENTION TO DETAIL</span>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <a href="#home" class="logo">NOIR <span>TIME</span></a>
+    <p>
+      A cinematic luxury-watch concept inspired by precision engineering,
+      midnight aesthetics, and the power of purposeful design.
+    </p>
+    <small>
+      © 2026 NOIR TIME · CONCEPT WEBSITE · NOT AN OFFICIAL ROLEX WEBSITE
+    </small>
+  </footer>
+
+  <script>
+    /* ==========================================
+       50 WATCH ASSEMBLY FRAMES
+       frame_001.jpg through frame_050.jpg
+       inside the frames folder.
+    ========================================== */
+    const FRAME_COUNT = 50;
+    const FRAME_FOLDER = "frames/";
+    const FRAME_PREFIX = "frame_";
+    const FRAME_EXTENSION = ".jpg";
+    const PAD_LENGTH = 3;
+
+    const frameA = document.getElementById("watchFrameA");
+    const frameB = document.getElementById("watchFrameB");
+    const frameNumber = document.getElementById("frameNumber");
+    const hero = document.querySelector(".hero");
+    const navbar = document.getElementById("navbar");
+    const glow = document.getElementById("touchGlow");
+
+    let frames = [];
+    let currentFrame = 1;
+    let activeImage = 0; // 0 means frameA is active, 1 means frameB is active
+    let lastScrollUpdate = 0;
+
+    function framePath(number) {
+      return FRAME_FOLDER +
+        FRAME_PREFIX +
+        String(number).padStart(PAD_LENGTH, "0") +
+        FRAME_EXTENSION;
+    }
+
+    /* Preload frames for smooth scrolling */
+    function preloadFrames() {
+      frames = new Array(FRAME_COUNT + 1);
+      for (let i = 1; i <= FRAME_COUNT; i++) {
+        const img = new Image();
+        img.src = framePath(i);
+        frames[i] = img;
+      }
+      showFrame(1);
+    }
+
+    /* Display the requested frame smoothly */
+    function showFrame(number) {
+      number = Math.max(1, Math.min(FRAME_COUNT, number));
+      const loadedImage = frames[number];
+      
+      // Update label
+      if (frameNumber) {
+        frameNumber.textContent = String(number).padStart(3, "0");
+      }
+
+      if (number === currentFrame && activeImage !== -1) {
+        return;
+      }
+
+      // Check if image is loaded or has source
+      const targetSrc = (loadedImage && loadedImage.src) ? loadedImage.src : framePath(number);
+      
+      currentFrame = number;
+      const target = activeImage === 0 ? frameB : frameA;
+      const other = activeImage === 0 ? frameA : frameB;
+
+      target.src = targetSrc;
+      target.style.opacity = "1";
+      other.style.opacity = "0";
+      activeImage = activeImage === 0 ? 1 : 0;
+    }
+
+    function getDesiredFrame() {
+      const rect = hero.getBoundingClientRect();
+      const scrollable = hero.offsetHeight - window.innerHeight;
+      if (scrollable <= 0) return 1;
+      const progress = Math.max(
+        0,
+        Math.min(1, -rect.top / scrollable)
+      );
+      return 1 + Math.round(progress * (FRAME_COUNT - 1));
+    }
+
+    /* Scroll-linked frame animation */
+    function updateScroll() {
+      const wanted = getDesiredFrame();
+      showFrame(wanted);
+
+      const scrolled = window.scrollY;
+      navbar.style.background = scrolled > 50
+        ? "rgba(12, 8, 20, .92)"
+        : "rgba(12, 8, 20, .72)";
+    }
+
+    let scrollTicking = false;
+    window.addEventListener("scroll", () => {
+      if (!scrollTicking) {
+        scrollTicking = true;
+        requestAnimationFrame(() => {
+          updateScroll();
+          scrollTicking = false;
+        });
+      }
+    }, { passive: true });
+
+    window.addEventListener("resize", () => {
+      if (!scrollTicking) {
+        scrollTicking = true;
+        requestAnimationFrame(() => {
+          updateScroll();
+          scrollTicking = false;
+        });
+      }
+    });
+
+    /* Reveal sections when they enter the viewport */
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll(".reveal").forEach(el => {
+      revealObserver.observe(el);
+    });
+
+    /* Curved cards: touch or click to reveal more detail */
+    document.querySelectorAll(".watch-card").forEach(card => {
+      function toggleCard(event) {
+        if (event.target.closest("a")) return;
+        card.classList.toggle("active");
+      }
+      card.addEventListener("click", toggleCard);
+      card.addEventListener("keydown", event => {
+        if (event.key === "Enter" || event.key === " ") {
+          if (event.target.closest("a")) return;
+          event.preventDefault();
+          card.classList.toggle("active");
+        }
+      });
+
+      /* Subtle desktop pointer tilt */
+      card.addEventListener("pointermove", event => {
+        if (event.pointerType !== "mouse") return;
+        const rect = card.getBoundingClientRect();
+        const x = (event.clientX - rect.left) / rect.width;
+        const y = (event.clientY - rect.top) / rect.height;
+        card.style.transform =
+          `perspective(900px) rotateX(${(0.5 - y) * 5}deg) rotateY(${(x - 0.5) * 5}deg) translateY(-5px)`;
+      });
+
+      card.addEventListener("pointerleave", () => {
+        card.style.transform = "";
+      });
+    });
+
+    /* Purple glow follows the pointer or touch */
+    function moveGlow(x, y) {
+      if (glow) {
+        glow.style.left = x + "px";
+        glow.style.top = y + "px";
+      }
+    }
+    window.addEventListener("pointermove", event => {
+      moveGlow(event.clientX, event.clientY);
+    }, { passive: true });
+
+    /* Ripple effect on every touch/click */
+    document.addEventListener("pointerdown", event => {
+      const ripple = document.createElement("span");
+      ripple.className = "ripple";
+      ripple.style.left = event.clientX + "px";
+      ripple.style.top = event.clientY + "px";
+      document.body.appendChild(ripple);
+      setTimeout(() => ripple.remove(), 800);
+    }, { passive: true });
+
+    /* Smoothly replay assembly when link is pressed */
+    document.querySelectorAll('a[href="#home"]').forEach(link => {
+      link.addEventListener("click", () => {
+        currentFrame = -1;
+        activeImage = 0;
+        frameA.style.opacity = "1";
+        frameB.style.opacity = "0";
+        showFrame(1);
+      });
+    });
+
+    /* Start preloading & sync scroll position */
+    preloadFrames();
+    updateScroll();
+  </script>
+</body>
+</html>
